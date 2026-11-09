@@ -6,9 +6,10 @@ from tkinter import messagebox
 
 GAMBLE_DIR = "gamble"
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-WALLET_FILE = os.path.join(ROOT_DIR, "wallet.txt") # [요구사항 2] 공용 돈 저장 파일
+WALLET_FILE = os.path.join(ROOT_DIR, "wallet.txt")
 
 GAME_LIST = [
+    # 추가 예시 : {"name": "gamble", "script": "gamble.py"}
     {"name": "Blackjack", "script": "blackjack.py"},
     {"name": "Poker", "script": "video_poker.py"},
 ]
