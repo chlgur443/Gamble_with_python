@@ -12,6 +12,7 @@ GAME_LIST = [
     # 추가 예시 : {"name": "gamble", "script": "gamble.py"}
     {"name": "Blackjack", "script": "blackjack.py"},
     {"name": "Poker", "script": "video_poker.py"},
+    {"name": "Texas Hold'em", "script": "texas_holdem.py"},
 ]
 
 def run_script(script_path):
