@@ -60,7 +60,7 @@ class TexasHoldem(tk.Tk):
         self.withdraw() 
         init_capital = simpledialog.askinteger(
             "AI 초기 자본금 설정",
-            "각 AI에게 지급할 초기 자본금을 입력하세요 (최소 1000):",
+            "각 AI에게 지급할 초기 자본금을 입력하세요 (최소 1000)",
             initialvalue=5000,
             minvalue=1000
         )
