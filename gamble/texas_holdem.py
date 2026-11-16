@@ -12,7 +12,7 @@ WALLET_FILE = os.path.join(ROOT_DIR, "wallet.txt")
 # 레이즈 제한 횟수 설정 (라운드당)
 MAX_RAISES_PER_ROUND = 3
 
-# --- 1. 족보 판정 로직 ---
+# 족보 판정 로직
 def evaluate_hand(hand):
     rank_map = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':11, 'Q':12, 'K':13, 'A':14}
     suits = [card[0] for card in hand]
@@ -52,7 +52,7 @@ def get_best_hand(hole_cards, community_cards):
         if score > best_score: best_score = score
     return best_score
 
-# --- 2. 텍사스 홀덤 메인 클래스 ---
+# 텍사스 홀덤 메인 클래스
 class TexasHoldem(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -171,7 +171,7 @@ class TexasHoldem(tk.Tk):
             if idx == start_idx: break 
         return idx
 
-    # --- 게임 규칙 및 흐름 제어 ---
+    # 게임 규칙 및 흐름 제어
     def start_new_game(self):
         self.players[0]["money"] = self.get_money()
         if self.players[0]["money"] < 100:
@@ -275,7 +275,7 @@ class TexasHoldem(tk.Tk):
         else:
             self.after(800, lambda: self.ai_action(p))
 
-    # --- 돈 계산 및 올인 처리 ---
+    # 돈 계산 및 올인 처리
     def pay(self, p, amount):
         if amount <= 0: return 0
         actual_pay = min(p["money"], amount)
@@ -416,7 +416,7 @@ class TexasHoldem(tk.Tk):
     def update_ui(self):
         self.pot_label.config(text=f"총 판돈(Pot) : {self.pot}원")
         
-        # update_ui가 호출될 때마다 유저의 소지금 표시가 즉시 반영되도록 갱신
+        # update_ui가 호출될 때마다 유저의 소지금 표시가 즉시 반영
         self.wallet_label.config(text=f"소지금 : {self.players[0]['money']}원")
         
         comm_str = ""
