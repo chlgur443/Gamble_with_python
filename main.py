@@ -13,6 +13,7 @@ GAME_LIST = [
     {"name": "Blackjack", "script": "blackjack.py"},
     {"name": "Poker", "script": "video_poker.py"},
     {"name": "Texas Hold'em", "script": "texas_holdem.py"},
+    {"name": "Video Slot Machine", "script": "video_slot.py"},
 ]
 
 def run_script(script_path):
@@ -85,7 +86,7 @@ class CasinoMainMenu(tk.Tk):
         current = self.get_money()
         with open(WALLET_FILE, "w") as f:
             f.write(str(current + 1000))
-        self.update_wallet_loop() # 즉시 반영
+        self.update_wallet_loop()
 
     def update_wallet_loop(self):
         """0.5초마다 백그라운드에서 wallet.txt 파일을 읽어와 잔액 업데이트"""
